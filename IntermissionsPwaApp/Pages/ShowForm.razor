@@ -1,8 +1,9 @@
 ﻿@page "/showform"
 @page "/showform/{Id}"
 @using IntermissionsPwaApp.Services
-@inject IShowService ShowService
+@using IntermissionsPwaApp.Entities
 
+@inject IShowService ShowService
 @inject NavigationManager Nav
 
 <h3>@(IsEdit ? "Show bewerken" : "Nieuwe show toevoegen")</h3>
@@ -11,6 +12,10 @@
     <DataAnnotationsValidator />
     <ValidationSummary />
 
+    <div>
+        <label>Titel</label>
+        <InputText @bind-Value="Show.Title" />
+    </div>
     <div>
         <label>Pauze</label>
         <InputText @bind-Value="Show.Intermission" />
@@ -29,34 +34,41 @@
 </EditForm>
 
 @code {
-[Parameter]
-public string? Id { get; set; }
+    [Parameter]
+    public string? Id { get; set; }
 
-private Show Show = new();
-private bool IsEdit => Id != null;
+    private Show Show = new();
+    private bool IsEdit => Id != null;
 
-protected override async Task OnInitializedAsync()
-{
-if (IsEdit)
-{
-var existing = await ShowService.GetByIdAsync(Id!);
-if (existing != null)
-Show = existing;
-}
-}
+    protected override async Task OnInitializedAsync()
+    {
+        if (IsEdit)
+        {
+            var existing = await ShowService.GetByIdAsync(Id!);
+            if (existing != null)
+                Show = existing;
+        }
+        else
+        {
+            Show.KdmExpires = DateTime.Today;
+        }
+    }
 
-private async Task HandleValidSubmit()
-{
-if (IsEdit)
-await ShowService.UpdateAsync(Show);
-else
-await ShowService.CreateAsync(Show);
+    private async Task HandleValidSubmit()
+    {
+        if (IsEdit)
+            await ShowService.UpdateAsync(Show);
+        else
+        {
+            Show.Id = Guid.NewGuid().ToString();
+            await ShowService.CreateAsync(Show);
+        }
 
-Nav.NavigateTo("/shows");
-}
+        Nav.NavigateTo("/shows");
+    }
 
-private void Cancel()
-{
-Nav.NavigateTo("/shows");
-}
+    private void Cancel()
+    {
+        Nav.NavigateTo("/shows");
+    }
 }

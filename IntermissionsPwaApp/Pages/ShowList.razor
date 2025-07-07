@@ -1,34 +1,36 @@
 ﻿@page "/shows"
 @using IntermissionsPwaApp.Services
+@using IntermissionsPwaApp.Entities
+
 @inject IShowService ShowService
 @inject NavigationManager Nav
 
-<h3>Shows</h3>
+<h3> 🎬Shows</h3>
 
-<button @onclick="@(() => Nav.NavigateTo("/showform"))">Toevoegen</button>
+<button @onclick="@(() => Nav.NavigateTo("/showform"))">➕ Toevoegen</button>
 
 <ul>
     @foreach (var show in Shows)
     {
-        <li>
-            @show.Intermission - @show.End - @show.KdmExpires.ToShortDateString()
-            <button @onclick="@(() => Nav.NavigateTo("/showform"))">Toevoegen</button>
-            <button @onclick="() => DeleteShow(show.Id)">Verwijder</button>
-        </li>
+    <li>
+        <strong>@show.Title</strong><br />
+        Pauze: @show.Intermission - Eind: @show.End - KDM: @show.KdmExpires.ToShortDateString()
+        <button @onclick="() => DeleteShow(show.Id)">🗑 Verwijder</button>
+    </li>
     }
 </ul>
 
 @code {
-    private List<Show> Shows = new();
+private List<Show> Shows = new();
 
-    protected override async Task OnInitializedAsync()
-    {
-        Shows = await ShowService.GetAllAsync();
-    }
+protected override async Task OnInitializedAsync()
+{
+Shows = await ShowService.GetAllAsync();
+}
 
-    private async Task DeleteShow(string id)
-    {
-        await ShowService.DeleteAsync(id);
-        Shows = await ShowService.GetAllAsync();
-    }
+private async Task DeleteShow(string id)
+{
+await ShowService.DeleteAsync(id);
+Shows = await ShowService.GetAllAsync();
+}
 }

@@ -1,0 +1,62 @@
+﻿@page "/showform"
+@page "/showform/{Id}"
+@using IntermissionsPwaApp.Services
+@inject IShowService ShowService
+
+@inject NavigationManager Nav
+
+<h3>@(IsEdit ? "Show bewerken" : "Nieuwe show toevoegen")</h3>
+
+<EditForm Model="@Show" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label>Pauze</label>
+        <InputText @bind-Value="Show.Intermission" />
+    </div>
+    <div>
+        <label>Eind</label>
+        <InputText @bind-Value="Show.End" />
+    </div>
+    <div>
+        <label>KDM Vervalt op</label>
+        <InputDate @bind-Value="Show.KdmExpires" />
+    </div>
+
+    <button type="submit">Opslaan</button>
+    <button @onclick="Cancel">Annuleren</button>
+</EditForm>
+
+@code {
+[Parameter]
+public string? Id { get; set; }
+
+private Show Show = new();
+private bool IsEdit => Id != null;
+
+protected override async Task OnInitializedAsync()
+{
+if (IsEdit)
+{
+var existing = await ShowService.GetByIdAsync(Id!);
+if (existing != null)
+Show = existing;
+}
+}
+
+private async Task HandleValidSubmit()
+{
+if (IsEdit)
+await ShowService.UpdateAsync(Show);
+else
+await ShowService.CreateAsync(Show);
+
+Nav.NavigateTo("/shows");
+}
+
+private void Cancel()
+{
+Nav.NavigateTo("/shows");
+}
+}

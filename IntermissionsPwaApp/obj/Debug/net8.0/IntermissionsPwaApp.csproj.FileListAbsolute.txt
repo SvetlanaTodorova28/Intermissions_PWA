@@ -1,9 +1,3 @@
-/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.csproj.AssemblyReference.cache
-/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.GeneratedMSBuildEditorConfig.editorconfig
-/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.AssemblyInfoInputs.cache
-/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.AssemblyInfo.cs
-/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.csproj.CoreCompileInputs.cache
-/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.MvcApplicationPartsAssemblyInfo.cache
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/blazor.boot.json
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/blazor.webassembly.js
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/dotnet.js
@@ -617,6 +611,13 @@
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/icudt_CJK.dat
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/icudt_EFIGS.dat
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/icudt_no_CJK.dat
+/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.csproj.AssemblyReference.cache
+/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.AssemblyInfoInputs.cache
+/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.AssemblyInfo.cs
+/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.csproj.CoreCompileInputs.cache
+/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.MvcApplicationPartsAssemblyInfo.cache
+/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.sourcelink.json
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/webcil/Microsoft.AspNetCore.Authorization.wasm
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/webcil/Microsoft.AspNetCore.Components.wasm
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/webcil/Microsoft.AspNetCore.Components.Forms.wasm

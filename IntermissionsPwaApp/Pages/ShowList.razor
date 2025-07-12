@@ -15,7 +15,7 @@
     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
         <div class="mb-2">
             <strong>@show.Title</strong><br />
-            Pauze: @show.Intermission – Eind: @show.End – KDM: @show.KdmExpires.ToShortDateString()
+            Pauze: @show.Intermission – Eind: @show.End – KDM: @show.KdmExpires.ToString("dd/MM/yyyy")
         </div>
         <div>
             <button class="btn btn-warning btn-sm me-2" @onclick="() => UpdateShow(show)">🔄 Bewerken</button>
@@ -27,25 +27,24 @@
 
 
 @code {
-private List<Show> Shows = new();
+    private List<Show> Shows = new();
 
-protected override async Task OnInitializedAsync()
-{
-Shows = await ShowService.GetAllAsync();
-}
-private async Task LoadAndSortShowsAsync()
-{
-    Shows = (await ShowService.GetAllAsync())
-        .OrderByDescending(s => s.KdmExpires)
-        .ToList();
-}
-private async Task DeleteShow(string id)
-{
-    await ShowService.DeleteAsync(id);
-    await LoadAndSortShowsAsync();
-}
-private async Task UpdateShow(Show show)
-{
-    await ShowService.UpdateAsync(show);
-    await LoadAndSortShowsAsync();}
+    protected override async Task OnInitializedAsync(){
+        Shows = await ShowService.GetAllAsync();
+    }
+
+    private async Task LoadAndSortShowsAsync(){
+        Shows = (await ShowService.GetAllAsync())
+            .OrderByDescending(s => s.KdmExpires)
+            .ToList();
+    }
+
+    private async Task DeleteShow(string id){
+        await ShowService.DeleteAsync(id);
+        await LoadAndSortShowsAsync();
+    }
+
+    private async Task UpdateShow(Show show){
+        Nav.NavigateTo($"showform/{show.Id}");
+    }
 }

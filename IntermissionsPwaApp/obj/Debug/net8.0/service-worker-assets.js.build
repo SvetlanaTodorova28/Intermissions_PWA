@@ -833,29 +833,21 @@
       "url": "_framework\/dotnet.runtime.js.map"
     },
     {
-      "hash": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
-      "url": "_framework\/icudt_CJK.dat"
+      "hash": "sha256-tO5O5YzMTVSaKBboxAqezOQL9ewmupzV2JrB5Rkc8a4=",
+      "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-8fItetYY8kQ0ww6oxwTLiT3oXlBwHKumbeP2pRF4yTc=",
-      "url": "_framework\/icudt_EFIGS.dat"
-    },
-    {
-      "hash": "sha256-L7sV7NEYP37\/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs=",
-      "url": "_framework\/icudt_no_CJK.dat"
-    },
-    {
-      "hash": "sha256-Tvs569l\/C4jBeZx3T+bYGyk1vxa55od5uVfP5cTZvAE=",
+      "hash": "sha256-D4yXd0lHAxmZevq2QKxvn7NFcJUvApjXSR+CVt4vUgE=",
       "url": "_framework\/IntermissionsPwaApp.wasm"
     },
     {
-      "hash": "sha256-zOUolS9cdO4P\/VQ\/q1fVAaK9eAnoUxoKMAsJxdW6zFo=",
+      "hash": "sha256-0yCPNyVbinim6Hou2wVsLI18JG7lDb0NNATuS2k74yc=",
       "url": "_framework\/IntermissionsPwaApp.pdb"
     },
     {
-      "hash": "sha256-HlH+jqBq0qjmE5M0uIcEwEdK7C5JFp7SYSuzv13DFbA=",
+      "hash": "sha256-KEAKAasyXzGYP1rAE9X9UwnhC35059xtg476J4eQfuQ=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "\/h42dOu4"
+  "version": "yfeznU3n"
 };

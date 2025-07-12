@@ -67,18 +67,24 @@
 </script>
 <script>
     window.badgeHelper = {
-        setBadge: function (count) {
+        setBadge: function () {
             if ('setAppBadge' in navigator) {
-                navigator.setAppBadge(count);
+                navigator.setAppBadge(); // toont enkel een stip
+                console.log("🔴 Badge gezet als stip");
             }
         },
         clearBadge: function () {
             if ('clearAppBadge' in navigator) {
                 navigator.clearAppBadge();
+                console.log("🟢 Badge gewist");
             }
+        },
+        isSupported: function () {
+            return 'setAppBadge' in navigator && 'clearAppBadge' in navigator;
         }
     };
 </script>
+
 <script>
     window.onload = () => {
         if ('setAppBadge' in navigator) {

@@ -71,7 +71,7 @@ public class ShowService : IShowService
 
             if (lastChecked != today)
             {
-                await _js.InvokeVoidAsync("badgeHelper.setBadge", soonExpiringCount);
+                await _js.InvokeVoidAsync("badgeHelper.setBadge");
                 await _js.InvokeVoidAsync("localStorage.setItem", "lastBadgeCheck", today);
             }
         }

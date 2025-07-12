@@ -5,20 +5,26 @@
 @inject IShowService ShowService
 @inject NavigationManager Nav
 
-<h3> 🎬Shows</h3>
+<h3 class="mb-3">🎬 Shows overzicht</h3>
 
-<button @onclick="@(() => Nav.NavigateTo("showform"))">➕ Toevoegen</button>
+<button class="btn btn-success mb-4" @onclick="@(() => Nav.NavigateTo("showform"))">➕ Nieuwe show toevoegen</button>
 
-<ul>
+<ul class="list-group">
     @foreach (var show in Shows)
     {
-    <li>
-        <strong>@show.Title</strong><br />
-        Pauze: @show.Intermission - Eind: @show.End - KDM: @show.KdmExpires.ToShortDateString()
-        <button @onclick="() => DeleteShow(show.Id)">🗑 Verwijder</button>
+    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+        <div class="mb-2">
+            <strong>@show.Title</strong><br />
+            Pauze: @show.Intermission – Eind: @show.End – KDM: @show.KdmExpires.ToShortDateString()
+        </div>
+        <div>
+            <button class="btn btn-warning btn-sm me-2" @onclick="() => UpdateShow(show)">🔄 Bewerken</button>
+            <button class="btn btn-danger btn-sm" @onclick="() => DeleteShow(show.Id)">🗑 Verwijder</button>
+        </div>
     </li>
     }
 </ul>
+
 
 @code {
 private List<Show> Shows = new();
@@ -27,10 +33,19 @@ protected override async Task OnInitializedAsync()
 {
 Shows = await ShowService.GetAllAsync();
 }
-
+private async Task LoadAndSortShowsAsync()
+{
+    Shows = (await ShowService.GetAllAsync())
+        .OrderByDescending(s => s.KdmExpires)
+        .ToList();
+}
 private async Task DeleteShow(string id)
 {
-await ShowService.DeleteAsync(id);
-Shows = await ShowService.GetAllAsync();
+    await ShowService.DeleteAsync(id);
+    await LoadAndSortShowsAsync();
 }
+private async Task UpdateShow(Show show)
+{
+    await ShowService.UpdateAsync(show);
+    await LoadAndSortShowsAsync();}
 }

@@ -6,31 +6,34 @@
 @inject IShowService ShowService
 @inject NavigationManager Nav
 
-<h3>@(IsEdit ? "Show bewerken" : "Nieuwe show toevoegen")</h3>
+<h3 class="mb-4">@((IsEdit ? "🎬 Show bewerken" : "🎬 Nieuwe show toevoegen"))</h3>
 
 <EditForm Model="@Show" OnValidSubmit="HandleValidSubmit">
     <DataAnnotationsValidator />
-    <ValidationSummary />
+    <ValidationSummary class="text-danger mb-3" />
 
-    <div>
-        <label>Titel</label>
-        <InputText @bind-Value="Show.Title" />
-    </div>
-    <div>
-        <label>Pauze</label>
-        <InputText @bind-Value="Show.Intermission" />
-    </div>
-    <div>
-        <label>Eind</label>
-        <InputText @bind-Value="Show.End" />
-    </div>
-    <div>
-        <label>KDM Vervalt op</label>
-        <InputDate @bind-Value="Show.KdmExpires" />
+    <div class="mb-3">
+        <label class="form-label">Titel</label>
+        <InputText @bind-Value="Show.Title" class="form-control" />
     </div>
 
-    <button type="submit">Opslaan</button>
-    <button @onclick="Cancel">Annuleren</button>
+    <div class="mb-3">
+        <label class="form-label">Pauze</label>
+        <InputText @bind-Value="Show.Intermission" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Eind</label>
+        <InputText @bind-Value="Show.End" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">KDM vervalt op</label>
+        <InputDate @bind-Value="Show.KdmExpires" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success me-2">💾 Opslaan</button>
+    <button type="button" @onclick="Cancel" class="btn btn-secondary">❌ Annuleren</button>
 </EditForm>
 
 @code {

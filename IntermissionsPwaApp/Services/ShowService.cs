@@ -58,4 +58,24 @@ public class ShowService : IShowService
         var json = JsonSerializer.Serialize(shows);
         await _js.InvokeVoidAsync("localStorage.setItem", StorageKey, json);
     }
+    public async Task UpdateBadgeAsync()
+    {
+        
+            var lastChecked = await _js.InvokeAsync<string>("localStorage.getItem", "lastBadgeCheck");
+            var today = DateTime.Today.ToString("yyyy-MM-dd");
+
+            if (lastChecked == today)
+                return; // al gecheckt vandaag
+
+            var shows = await GetAllAsync();
+            var soonExpiringCount = shows.Count(s => s.KdmExpires <= DateTime.Today.AddDays(3));
+
+            if (soonExpiringCount > 0)
+                await _js.InvokeVoidAsync("badgeHelper.setBadge", soonExpiringCount);
+            else
+                await _js.InvokeVoidAsync("badgeHelper.clearBadge");
+
+            await _js.InvokeVoidAsync("localStorage.setItem", "lastBadgeCheck", today);
+    }
+
 }

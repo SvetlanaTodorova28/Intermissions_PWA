@@ -9,4 +9,5 @@ public interface IShowService
     Task CreateAsync(Show newShow);
     Task UpdateAsync(Show updatedShow);
     Task DeleteAsync(string id);
+    Task UpdateBadgeAsync();
 }

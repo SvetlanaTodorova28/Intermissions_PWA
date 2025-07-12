@@ -29,7 +29,7 @@
       "url": "icon-new-512.png"
     },
     {
-      "hash": "sha256-T5ejTHsmTHv0t8Un2fUivCXOaL5iKh2+SPqr8YvT0y8=",
+      "hash": "sha256-hZicp8AlsFLFZ2jxeCHkRsRJnbrNjrV1uyFPlGYP4UE=",
       "url": "index.html"
     },
     {
@@ -841,17 +841,17 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-DIHVfPb9638NjsU6SkAjwYhSsdd951w57mhNx3NBQG4=",
+      "hash": "sha256-Rozk5kH6VBlER4l8QFABRcMjbjK42RM9hACWNO2su9M=",
       "url": "_framework\/IntermissionsPwaApp.wasm"
     },
     {
-      "hash": "sha256-Z\/3tynL6ytniDweEcfjkiJMVV+kIuiNDzBuh+pAIW3Y=",
+      "hash": "sha256-NwLggCfsm3j3MJIpz0kBzNZQHVHkhVebxboGy+caKs8=",
       "url": "_framework\/IntermissionsPwaApp.pdb"
     },
     {
-      "hash": "sha256-1Uja9gXYF6sLzRMhSq7oRBYVbR6UT9zh\/YEh9qKGhhI=",
+      "hash": "sha256-TyPUgJa7ZQ2rCreYWWXe2ZCVv3JU4QIg73F9HU9FAfo=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "Dw7grSVv"
+  "version": "CX\/sTPrV"
 };

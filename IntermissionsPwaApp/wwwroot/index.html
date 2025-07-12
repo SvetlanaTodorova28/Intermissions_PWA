@@ -66,6 +66,30 @@
         return !!deferredPrompt;
     };
 </script>
+<script>
+    window.badgeHelper = {
+        setBadge: function (count) {
+            if ('setAppBadge' in navigator) {
+                navigator.setAppBadge(count);
+            }
+        },
+        clearBadge: function () {
+            if ('clearAppBadge' in navigator) {
+                navigator.clearAppBadge();
+            }
+        }
+    };
+</script>
+<script>
+    window.onload = () => {
+        if ('setAppBadge' in navigator) {
+            navigator.setAppBadge(1);
+            console.log("✅ Badge gezet!");
+        } else {
+            console.warn("❌ Badging API niet ondersteund op dit platform.");
+        }
+    };
+</script>
 
 <script src="_framework/blazor.webassembly.js"></script>
 </body>

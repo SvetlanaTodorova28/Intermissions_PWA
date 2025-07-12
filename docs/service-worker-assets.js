@@ -17,7 +17,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-dVOVjVCIzcCdgP9AXay1p+gX\/pXXCXJn43lrHaO36AE=",
+      "hash": "sha256-ULQKXSCzVt\/Ax3Bl6We2TQyiGstLoKxlKtVdRWU9CrI=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -29,7 +29,7 @@
       "url": "_framework\/dotnet.native.wasm"
     },
     {
-      "hash": "sha256-kVMvAgzoOBmp4E+J6zoNI3Y39dtP8kOQh+WFmz2FI\/c=",
+      "hash": "sha256-uJTkgrthDJCGk92LXIqkf0phWG4DhBFmdWaaVJLz5LI=",
       "url": "_framework\/IntermissionsPwaApp.wasm"
     },
     {
@@ -169,7 +169,7 @@
       "url": "_framework\/System.Runtime.Serialization.Primitives.wasm"
     },
     {
-      "hash": "sha256-942HhOSvGjlCY3RPa7D6ATmzc\/LUXnQFa+G9RpqHb18=",
+      "hash": "sha256-r100LRR35Komy7iKOh59JR5iCzprhKVEBBWzgiQr7CA=",
       "url": "_framework\/System.Runtime.wasm"
     },
     {
@@ -221,7 +221,7 @@
       "url": "icon-new-512.png"
     },
     {
-      "hash": "sha256-\/7F1koqovQXhM0bNt2swrKb0i3DtlL90F0NRWLtkavc=",
+      "hash": "sha256-XmBeNagBfWPaCHQ9Z2ny+nkcCbLde0At7V257uyHwlQ=",
       "url": "index.html"
     },
     {
@@ -233,5 +233,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "36QMPC9R"
+  "version": "3AoX\/YNQ"
 };

@@ -69,6 +69,7 @@ public class ShowService : IShowService
 
             var shows = await GetAllAsync();
             var soonExpiringCount = shows.Count(s => s.KdmExpires <= DateTime.Today.AddDays(3));
+            Console.WriteLine($"Badge count: {soonExpiringCount}");
 
             if (soonExpiringCount > 0)
                 await _js.InvokeVoidAsync("badgeHelper.setBadge", soonExpiringCount);

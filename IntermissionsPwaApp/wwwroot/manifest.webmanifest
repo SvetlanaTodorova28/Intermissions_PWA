@@ -2,7 +2,7 @@
   "name": "IntermissionsPwaApp",
   "short_name": "Intermissions",
   "id": "/Intermissions_PWA/",
-  "start_url": "/",
+  "start_url": "/Intermissions_PWA/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#03173d",

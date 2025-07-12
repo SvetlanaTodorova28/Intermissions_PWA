@@ -29,11 +29,11 @@
       "url": "icon-new-512.png"
     },
     {
-      "hash": "sha256-hZicp8AlsFLFZ2jxeCHkRsRJnbrNjrV1uyFPlGYP4UE=",
+      "hash": "sha256-Fipl0AgFFV6A+AfgSAnS98YLAZt5l+Yj2RndZuUbFc0=",
       "url": "index.html"
     },
     {
-      "hash": "sha256-gnC2vJppyIMglQYdnzjaiALaiPJATpWLRcerHNYl6BY=",
+      "hash": "sha256-YTNp2daOPEXDJI\/y7\/6EIC7r8kYEuP15+SYgTqN0+44=",
       "url": "manifest.webmanifest"
     },
     {
@@ -853,5 +853,5 @@
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "CX\/sTPrV"
+  "version": "wVgBD3HN"
 };

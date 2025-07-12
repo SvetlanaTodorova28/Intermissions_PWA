@@ -67,12 +67,14 @@
             await ShowService.CreateAsync(Show);
         }
 
-        Nav.NavigateTo($"/Intermissions_PWA/shows", forceLoad: true);    
+        var uri = new Uri(Nav.BaseUri);
+        Nav.NavigateTo($"{uri.AbsolutePath}shows");
+
     }
 
     private void Cancel()
     {
-        Nav.NavigateTo($"/Intermissions_PWA/shows", forceLoad: true);
-        
+        var uri = new Uri(Nav.BaseUri);
+        Nav.NavigateTo($"{uri.AbsolutePath}shows");
     }
 }

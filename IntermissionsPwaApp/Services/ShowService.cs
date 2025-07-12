@@ -60,23 +60,26 @@ public class ShowService : IShowService
     }
     public async Task UpdateBadgeAsync()
     {
-        
+        var shows = await GetAllAsync();
+        var soonExpiringCount = shows.Count(s => s.KdmExpires <= DateTime.Today.AddDays(3));
+        await _js.InvokeVoidAsync("console.log", $"🎯 Badge count: {soonExpiringCount}");
+
+        if (soonExpiringCount > 0)
+        {
             var lastChecked = await _js.InvokeAsync<string>("localStorage.getItem", "lastBadgeCheck");
             var today = DateTime.Today.ToString("yyyy-MM-dd");
 
-            if (lastChecked == today)
-                return; // al gecheckt vandaag
-
-            var shows = await GetAllAsync();
-            var soonExpiringCount = shows.Count(s => s.KdmExpires <= DateTime.Today.AddDays(3));
-            Console.WriteLine($"Badge count: {soonExpiringCount}");
-
-            if (soonExpiringCount > 0)
+            if (lastChecked != today)
+            {
                 await _js.InvokeVoidAsync("badgeHelper.setBadge", soonExpiringCount);
-            else
-                await _js.InvokeVoidAsync("badgeHelper.clearBadge");
-
-            await _js.InvokeVoidAsync("localStorage.setItem", "lastBadgeCheck", today);
+                await _js.InvokeVoidAsync("localStorage.setItem", "lastBadgeCheck", today);
+            }
+        }
+        else
+        {
+            await _js.InvokeVoidAsync("badgeHelper.clearBadge");
+            await _js.InvokeVoidAsync("localStorage.removeItem", "lastBadgeCheck");
+        }
     }
 
 }

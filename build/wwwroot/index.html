@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Intermissions</title>
     <base href="/Intermissions_PWA/" />
-
-    <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
-    <link href="/Intermissions_PWA/IntermissionsPwaApp.styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="favicon.ico" />
+    <link href="IntermissionsPwaApp.styles.css" rel="stylesheet" />
+    <link rel="manifest" href="/Intermissions_PWA/manifest.json">
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+    
 
-    <!-- Manifest & Icons -->
-    <link rel="manifest" href="/Intermissions_PWA/manifest.json" />
-    <link rel="icon" type="image/png" href="/Intermissions_PWA/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="512x512" href="/Intermissions_PWA/icon-512.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="/Intermissions_PWA/icon-192.png" />
 </head>
 <body>
 <div id="app">
@@ -31,11 +29,9 @@
     <a href="" class="reload">Herlaad</a>
     <a class="dismiss">🗙</a>
 </div>
-
-<!-- ✅ Service Worker voor PWA -->
 <script>
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/Intermissions_PWA/service-worker.js')
+        navigator.serviceWorker.register('service-worker.js')
             .then(registration => {
                 console.log(`✅ Service Worker geregistreerd`, registration.scope);
             })
@@ -45,7 +41,6 @@
     }
 </script>
 
-<!-- 🟡 Install Prompt -->
 <script>
     let deferredPrompt;
 
@@ -55,6 +50,7 @@
         deferredPrompt = e;
         window.dispatchEvent(new Event("installPromptAvailable"));
     });
+
 
     window.showInstallPrompt = async () => {
         if (deferredPrompt) {
@@ -70,8 +66,6 @@
         return !!deferredPrompt;
     };
 </script>
-
-<!-- ✅ Badge Helper -->
 <script>
     window.badgeHelper = {
         setBadge: function (count) {
@@ -85,7 +79,8 @@
             }
         }
     };
-
+</script>
+<script>
     window.onload = () => {
         if ('setAppBadge' in navigator) {
             navigator.setAppBadge(1);
@@ -96,7 +91,6 @@
     };
 </script>
 
-<!-- ✅ Blazor WebAssembly -->
 <script src="_framework/blazor.webassembly.js"></script>
 </body>
 </html>

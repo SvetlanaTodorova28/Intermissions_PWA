@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "IntermissionsPwaApp",
   "resources": {
-    "hash": "sha256-lhcPi/3LdoADmLB3xA5VguQv2bvYJj1mExMXEWB9yiQ=",
+    "hash": "sha256-N+BfT/Qr/W0fipcy72bk0B5ZrRA9ZE+6ckSAQ9Ft7SY=",
     "jsModuleNative": {
       "dotnet.native.8.0.15.c6l25vybfe.js": "sha256-zBFzTRWI4OdHUBpyMKd0ruhxFOD7VaP6U+mrLtcKZM4="
     },
@@ -15,7 +15,7 @@
       "icudt.dat": "sha256-tO5O5YzMTVSaKBboxAqezOQL9ewmupzV2JrB5Rkc8a4="
     },
     "assembly": {
-      "IntermissionsPwaApp.wasm": "sha256-X894yuMwyYT0eKRpjX4ZfZ85uPaBb4hqaefjKL5PrTQ=",
+      "IntermissionsPwaApp.wasm": "sha256-kVMvAgzoOBmp4E+J6zoNI3Y39dtP8kOQh+WFmz2FI/c=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-kEBfwyxg4MQl4ORPj93lRZijvNgOX6O5KdukFlSS0MA=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-aS91yCK3vmW959h09kTWN7giceSLMCS+YS+iZv5SN34=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-9EzTXRE9qJ/qMNR6OzJfkYb4C0/RxnsGKL2p3wW23+Y=",

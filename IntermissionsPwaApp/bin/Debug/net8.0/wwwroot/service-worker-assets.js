@@ -5,7 +5,7 @@
       "url": "404.html"
     },
     {
-      "hash": "sha256-JOZWd9XYwDyrwjSB0PVTcc602GisYED21qQUCSMlGtI=",
+      "hash": "sha256-49Sb0P1jKK774XULvNxrgDPZ2nJrPQjZOPJxPMXl7MQ=",
       "url": "css\/app.css"
     },
     {
@@ -29,7 +29,7 @@
       "url": "icon-new-512.png"
     },
     {
-      "hash": "sha256-XmBeNagBfWPaCHQ9Z2ny+nkcCbLde0At7V257uyHwlQ=",
+      "hash": "sha256-\/7F1koqovQXhM0bNt2swrKb0i3DtlL90F0NRWLtkavc=",
       "url": "index.html"
     },
     {
@@ -853,5 +853,5 @@
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "SqQNvElU"
+  "version": "bIzNImQc"
 };

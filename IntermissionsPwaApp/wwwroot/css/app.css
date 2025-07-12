@@ -101,3 +101,15 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+.ui-badge {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem 0.6rem;
+    border-radius: 50%;
+    z-index: 9999;
+    box-shadow: 0 0 5px black;
+}

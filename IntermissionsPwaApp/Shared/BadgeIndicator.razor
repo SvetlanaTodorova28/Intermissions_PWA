@@ -1,0 +1,23 @@
+﻿@using IntermissionsPwaApp.Services
+
+@inject IShowService ShowService
+@inject IJSRuntime JS
+
+@if (ShowBadge)
+{
+    <div class="ui-badge">1</div>
+}
+
+@code {
+    private bool ShowBadge;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var shows = await ShowService.GetAllAsync();
+        var soonExpiring = shows.Count(s => s.KdmExpires <= DateTime.Today.AddDays(3));
+
+        var supportsBadge = await JS.InvokeAsync<bool>("badgeHelper.isSupported");
+
+        ShowBadge = soonExpiring > 0 && !supportsBadge;
+    }
+}

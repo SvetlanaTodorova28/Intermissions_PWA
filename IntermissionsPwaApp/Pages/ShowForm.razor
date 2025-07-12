@@ -67,12 +67,12 @@
             await ShowService.CreateAsync(Show);
         }
 
-        Nav.NavigateTo($"{Nav.BaseUri}shows", forceLoad: true);    
+        Nav.NavigateTo($"/Intermissions_PWA/shows", forceLoad: true);    
     }
 
     private void Cancel()
     {
-        Nav.NavigateTo($"{Nav.BaseUri}shows", forceLoad: true);
+        Nav.NavigateTo($"/Intermissions_PWA/shows", forceLoad: true);
         
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VrGewM4ei6sW5wpnkebZcSVtTKBm/HvFgYqJVRYocC4=",
+  "Hash": "5QXxeJJ1tLSDTP5gQtSTEWlOp1Wd6WMJLMIRrGPnnDE=",
   "Source": "IntermissionsPwaApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -7805,6 +7805,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/service-worker.published.js"
+    },
+    {
+      "Identity": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/404.html",
+      "SourceId": "IntermissionsPwaApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "404.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/404.html"
     },
     {
       "Identity": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/css/app.css",

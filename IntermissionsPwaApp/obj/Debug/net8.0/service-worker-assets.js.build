@@ -1,6 +1,10 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
+      "hash": "sha256-Y0Lqi3ZSjSa887aUr0gEPn0tNYhqCLo65FmF0os3+ms=",
+      "url": "404.html"
+    },
+    {
       "hash": "sha256-JOZWd9XYwDyrwjSB0PVTcc602GisYED21qQUCSMlGtI=",
       "url": "css\/app.css"
     },
@@ -25,7 +29,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-blW1f59r2ZbVYDhMSWtDIX7ZTocZKkwpmNjmIpmNZxY=",
+      "hash": "sha256-WskD5G4\/c9cb6eMpT2O8MbFVYzQ+n7ZnCT4tsEuCLHc=",
       "url": "index.html"
     },
     {
@@ -837,17 +841,17 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-D4yXd0lHAxmZevq2QKxvn7NFcJUvApjXSR+CVt4vUgE=",
+      "hash": "sha256-C+hfrbEVLbiJrvFe+xwRlDjcat\/sZe5p2FQmS7s7cPY=",
       "url": "_framework\/IntermissionsPwaApp.wasm"
     },
     {
-      "hash": "sha256-0yCPNyVbinim6Hou2wVsLI18JG7lDb0NNATuS2k74yc=",
+      "hash": "sha256-CqpcQ9VvTVvyTn79SMdaDvNCARZ4b+E7BA2qzITVlSI=",
       "url": "_framework\/IntermissionsPwaApp.pdb"
     },
     {
-      "hash": "sha256-KEAKAasyXzGYP1rAE9X9UwnhC35059xtg476J4eQfuQ=",
+      "hash": "sha256-5Dz26zK70Ed0j2XM+5H1InWa3mMowS8tcD3DJY6VjQs=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "yfeznU3n"
+  "version": "VAr1l82x"
 };

@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets/service-worker.js"
     },
     {
+      "Id": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/404.html",
+      "PackagePath": "staticwebassets/404.html"
+    },
+    {
       "Id": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/css/app.css",
       "PackagePath": "staticwebassets/css/app.css"
     },

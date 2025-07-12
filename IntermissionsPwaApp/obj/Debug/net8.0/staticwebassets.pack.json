@@ -53,8 +53,8 @@
       "PackagePath": "staticwebassets/index.html"
     },
     {
-      "Id": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/manifest.webmanifest",
-      "PackagePath": "staticwebassets/manifest.webmanifest"
+      "Id": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/manifest.json",
+      "PackagePath": "staticwebassets/manifest.json"
     },
     {
       "Id": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/sample-data/weather.json",

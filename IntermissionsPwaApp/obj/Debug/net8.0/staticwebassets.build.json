@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jDNuS2VgQgIl6qrY+PD7vDPWhFUiEiv4V8gPk+bvk9U=",
+  "Hash": "y9zbyFxRo5filwd5pNdQwYubcWjDNpiZagkezQt0+go=",
   "Source": "IntermissionsPwaApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -7959,12 +7959,12 @@
       "OriginalItemSpec": "wwwroot/index.html"
     },
     {
-      "Identity": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/manifest.webmanifest",
+      "Identity": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/manifest.json",
       "SourceId": "IntermissionsPwaApp",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/",
       "BasePath": "/",
-      "RelativePath": "manifest.webmanifest",
+      "RelativePath": "manifest.json",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7975,7 +7975,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/manifest.webmanifest"
+      "OriginalItemSpec": "wwwroot/manifest.json"
     },
     {
       "Identity": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/sample-data/weather.json",

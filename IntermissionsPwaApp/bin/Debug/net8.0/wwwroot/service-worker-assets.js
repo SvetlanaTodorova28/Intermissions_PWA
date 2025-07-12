@@ -29,12 +29,12 @@
       "url": "icon-new-512.png"
     },
     {
-      "hash": "sha256-R4oGjENUso4nkD4nLOKEe4ZD2cb2v2s03JSgPlhyTE8=",
+      "hash": "sha256-ygfVQ7aoaNZJNbL+hndzIYoUtcJ0pp8z+7GZm5bjlXc=",
       "url": "index.html"
     },
     {
       "hash": "sha256-eyrXfubp2R4JDVodh9qLGdyfmBys0Gc\/K3SyyDdD0tg=",
-      "url": "manifest.webmanifest"
+      "url": "manifest.json"
     },
     {
       "hash": "sha256-enKgCMkYmCpfEcmg6Annbmc40VZ\/A6aYYSQjZfVn2cU=",
@@ -841,17 +841,17 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-pa0goqWDXeOaruBTs5bKAwTfFOYVGW5u+vMiXFybx+U=",
+      "hash": "sha256-R2Ve5ZdRRHMPnhJ5Wn0FGPNl94j6o6OLjS3+CoH9bH4=",
       "url": "_framework\/IntermissionsPwaApp.wasm"
     },
     {
-      "hash": "sha256-fBRrLs7G9powPE9OgkAR16mhp7q0INh5aosj8J8kdx8=",
+      "hash": "sha256-oa0WVYCMxCEGYrrp2lakQ\/SuCj+MPDrx+8U++t6zdEU=",
       "url": "_framework\/IntermissionsPwaApp.pdb"
     },
     {
-      "hash": "sha256-i9BhS88NTsASl4P8ZJd46MhnNuNea2EyzNlku4PEdTk=",
+      "hash": "sha256-MQL+1Apv01CpPDhpVtE0rxHf4N9yMzOWn\/EuE\/h2RRg=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "SxBXDQbB"
+  "version": "Eof8OIFC"
 };

@@ -1,6 +1,6 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">IntermissionsPwaApp</a>
+        <a class="navbar-brand" href="">Intermissions</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,12 +10,16 @@
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
         <div class="nav-item px-3">
+            <NavLink href="https://cinemakoksijde.be/nl" class="nav-link" Match="NavLinkMatch.All">
+                🍿 Cinema
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
             <NavLink href="shows" class="nav-link" Match="NavLinkMatch.All">
                 🎬 Shows
             </NavLink>
-
         </div>
-      
+
     </nav>
 </div>
 

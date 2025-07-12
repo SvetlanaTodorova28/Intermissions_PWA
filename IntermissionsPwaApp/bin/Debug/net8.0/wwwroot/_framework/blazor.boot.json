@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "IntermissionsPwaApp",
   "resources": {
-    "hash": "sha256-YYnfuiR8KUV1J9lO4xluPhZmjN7fw3Am7g9uXBkaJts=",
+    "hash": "sha256-lU7x4HdvKc1G6lHJSeAnqson7VJbB1h4gi9dVVP0No8=",
     "jsModuleNative": {
       "dotnet.native.8.0.15.mqmsbt893o.js": "sha256-ftpNqtARtVNE8ku5eB/jXoklb41UQ+EutUHfwmbNTBY="
     },
@@ -208,10 +208,10 @@
       "mscorlib.wasm": "sha256-BeLfFpg9iS3DkEdywsYY7sV6ML3knqkMaMq0JBEbWlw=",
       "netstandard.wasm": "sha256-VkjUtJ6DK5bFTc2JwwGHmQY3tBcNSC7zMSJXuiXcnJA=",
       "System.Private.CoreLib.wasm": "sha256-VIQEPUSb48N39LR+ncGDP5xU02xuRbyZU8MhMho26wQ=",
-      "IntermissionsPwaApp.wasm": "sha256-jSVNweyWozpa/wHiTwLck8JWgwzfw06tY0bzSnWlMWE="
+      "IntermissionsPwaApp.wasm": "sha256-j9yCEyaW+LUMkPiwE1Rv+cQLCplXQ+C26/9tb+CbZOA="
     },
     "pdb": {
-      "IntermissionsPwaApp.pdb": "sha256-pKLYhC3Jr2OjDFyk/cCkeHMQHHMFLqZkOK3blC+mjVE="
+      "IntermissionsPwaApp.pdb": "sha256-miLAkVoq8cyng9QG/vWE2lIc/YZTNTo8oDXeQDYCBlk="
     }
   },
   "cacheBootResources": true,

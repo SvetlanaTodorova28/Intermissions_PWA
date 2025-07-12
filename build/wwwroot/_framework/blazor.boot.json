@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "IntermissionsPwaApp",
   "resources": {
-    "hash": "sha256-phXT6CDaws0hElV6s6mj925GIf3IC2+qeu51LOuVpm4=",
+    "hash": "sha256-WPQN/nIKDylVWhqBqaSRJj8JC5M8YHNOIiU3F/PuMDE=",
     "jsModuleNative": {
       "dotnet.native.8.0.15.c6l25vybfe.js": "sha256-zBFzTRWI4OdHUBpyMKd0ruhxFOD7VaP6U+mrLtcKZM4="
     },
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "IntermissionsPwaApp.wasm": "sha256-uwh94mto2sQI/NNuC4q2y8jJul4OgIp0+HjqPcFu6c8=",
+      "IntermissionsPwaApp.wasm": "sha256-xCGeY/o2lwIXV6ggKOFufijGbszyd+EAxp2KMCMvupM=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-kEBfwyxg4MQl4ORPj93lRZijvNgOX6O5KdukFlSS0MA=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-aS91yCK3vmW959h09kTWN7giceSLMCS+YS+iZv5SN34=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-9EzTXRE9qJ/qMNR6OzJfkYb4C0/RxnsGKL2p3wW23+Y=",
@@ -43,7 +43,7 @@
       "System.ComponentModel.wasm": "sha256-eOBcoWPWDw8oV0/enNaAg9U3bAqgJYX1wKzWgVbSky4=",
       "System.Console.wasm": "sha256-BeoJajYKrRNMeiImyhcNg2Uby4Jg22k0N3IBdk230SE=",
       "System.Linq.Expressions.wasm": "sha256-GdLLe6Yzfq0by6a4iZzI4qf4XpinH/GiAKmTaWzVLrs=",
-      "System.Linq.wasm": "sha256-SjEauSlb1Hkeo2JEACL+MbRGiheAP5CMH2E/xBkBqKk=",
+      "System.Linq.wasm": "sha256-FUhGfneRJihEMLg3jWrwi3VMAhZ7hRKvFdeCm1mjWnw=",
       "System.Memory.wasm": "sha256-70LF9ZNsMMLVWZZt1+1cBBGSkLggb/ASHF6a2bmNwFU=",
       "System.Net.Http.wasm": "sha256-t6tyJki9C7XwwvD/wMYXi/a+Euz1YKhggQ4JX27aRf4=",
       "System.Net.Primitives.wasm": "sha256-T5sOg44ChbGEk3yxANWUET1Wxyfx4qBEILhoeSX0Ij4=",

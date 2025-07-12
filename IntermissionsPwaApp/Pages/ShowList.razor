@@ -12,10 +12,18 @@
 <ul class="list-group">
     @foreach (var show in Shows)
     {
+    var vervaltBinnen3Dagen = show.KdmExpires <= DateTime.Today.AddDays(3);
+
     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-        <div class="mb-2">
+        <div>
             <strong>@show.Title</strong><br />
-            Pauze: @show.Intermission – Eind: @show.End – KDM: @show.KdmExpires.ToString("dd/MM/yyyy")
+            Pauze: @show.Intermission – Eind: @show.End –
+            KDM: @show.KdmExpires.ToString("dd/MM/yyyy")
+
+            @if (vervaltBinnen3Dagen)
+            {
+            <span class="badge bg-danger ms-2">⏳ Vervalt bijna</span>
+            }
         </div>
         <div>
             <button class="btn btn-warning btn-sm me-2" @onclick="() => UpdateShow(show)">🔄 Bewerken</button>
@@ -23,6 +31,7 @@
         </div>
     </li>
     }
+
 </ul>
 
 

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IntermissionsPwaApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b42d29661e1db35b4b04449616783f81c5dda40")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3d102be4031eedc6931d435afa382eb94b44981")]
 [assembly: System.Reflection.AssemblyProductAttribute("IntermissionsPwaApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IntermissionsPwaApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

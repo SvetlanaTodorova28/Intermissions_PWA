@@ -86,14 +86,14 @@
 </script>
 
 <script>
-    window.onload = () => {
+    window.addEventListener("load", () => {
         if ('setAppBadge' in navigator) {
-            navigator.setAppBadge(1);
+            navigator.setAppBadge();
             console.log("✅ Badge gezet!");
         } else {
             console.warn("❌ Badging API niet ondersteund op dit platform.");
         }
-    };
+    });
 </script>
 
 <script src="_framework/blazor.webassembly.js"></script>

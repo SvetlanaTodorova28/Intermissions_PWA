@@ -29,7 +29,7 @@
       "url": "icon-new-512.png"
     },
     {
-      "hash": "sha256-aVHzNlc46gOmweifbLET5Bb4EYFpn3pqES8U3BG0Oec=",
+      "hash": "sha256-90Ibtsb\/O8+eoGs+3lm2nB3XRx0zUIJYHOwCl9gIde0=",
       "url": "index.html"
     },
     {
@@ -841,17 +841,17 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-QZB8U0fljvw0MFXZe2bBOzrq1RSRg8TNrU2mOX08F+E=",
+      "hash": "sha256-WpBphJT2B65QmrOQVJB9HPgzo10E4LxF2aTWEdNrB9k=",
       "url": "_framework\/IntermissionsPwaApp.wasm"
     },
     {
-      "hash": "sha256-bi9BZveuf8xWWSogZJZlYBZvuyb4A2o4J\/p+WvPYnM0=",
+      "hash": "sha256-Cpsfu8KgVdGYGQMqve0UDrMD5nsm33BSjU4yapd\/JM4=",
       "url": "_framework\/IntermissionsPwaApp.pdb"
     },
     {
-      "hash": "sha256-cgIGBcY7cg50liD8BP5T4HbPbjQlbrpahjmtGp0ylPI=",
+      "hash": "sha256-GvDMJ6EcX\/rgx2qCcv1uUHhkj8apC3koXUOA6JJLHzc=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "ZmpUaqNW"
+  "version": "dLGam90i"
 };

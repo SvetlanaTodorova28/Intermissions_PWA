@@ -37,16 +37,16 @@
       "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Id": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/favicon.png",
-      "PackagePath": "staticwebassets/favicon.png"
+      "Id": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/favicon.ico",
+      "PackagePath": "staticwebassets/favicon.ico"
     },
     {
-      "Id": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/icon-192.png",
-      "PackagePath": "staticwebassets/icon-192.png"
+      "Id": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/icon-new-192.png",
+      "PackagePath": "staticwebassets/icon-new-192.png"
     },
     {
-      "Id": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/icon-512.png",
-      "PackagePath": "staticwebassets/icon-512.png"
+      "Id": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/icon-new-512.png",
+      "PackagePath": "staticwebassets/icon-new-512.png"
     },
     {
       "Id": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/index.html",

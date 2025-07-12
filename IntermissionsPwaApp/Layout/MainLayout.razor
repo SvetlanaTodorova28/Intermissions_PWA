@@ -1,6 +1,4 @@
 ﻿@inherits LayoutComponentBase
-@inject IJSRuntime JS
-
 <div class="page">
     <div class="sidebar">
         <NavMenu />
@@ -8,45 +6,7 @@
 
     <main>
         <article class="content px-4">
-            @if (canInstall)
-            {
-                <button class="btn btn-primary mb-3" @onclick="InstallApp">📥 Installeer app</button>
-            }
-
             @Body
         </article>
     </main>
 </div>
-
-@code {
-    private bool canInstall = false;
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            try
-            {
-                canInstall = await JS.InvokeAsync<bool>("setupInstallPrompt");
-                StateHasChanged();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Install prompt setup error: {ex.Message}");
-            }
-        }
-    }
-
-    private async Task InstallApp()
-    {
-        try
-        {
-            var result = await JS.InvokeAsync<bool>("triggerInstall");
-            Console.WriteLine(result ? "✅ App geïnstalleerd" : "❌ Installatie geweigerd");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Installatie error: {ex.Message}");
-        }
-    }
-}

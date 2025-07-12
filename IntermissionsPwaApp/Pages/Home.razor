@@ -1,7 +1,57 @@
 ﻿@page "/"
+@inject IJSRuntime JS
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, projectionnist!</h1>
+<h1>Hello, projectionist!</h1>
 
-Welcome to the shows app.
+<p>Welcome to the shows app.</p>
+
+@if (canInstall)
+{
+    <div class="button-container">
+        <button class="install-button" @onclick="InstallPwa">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+            </svg>
+            <span>Install App</span>
+        </button>
+    </div>
+}
+
+@code {
+    private bool canInstall = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                canInstall = await JS.InvokeAsync<bool>("installPromptIsAvailable");
+                StateHasChanged();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ Fout bij check installatieprompt: {ex.Message}");
+            }
+        }
+    }
+
+    private async Task InstallPwa()
+    {
+        try
+        {
+            var installed = await JS.InvokeAsync<bool>("showInstallPrompt");
+            Console.WriteLine(installed ? "✅ App installed!" : "❌ Installation dismissed or failed.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ Installatie mislukt: {ex.Message}");
+        }
+    }
+}

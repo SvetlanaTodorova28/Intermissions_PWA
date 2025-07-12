@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Intermissions</title>
-    <base href="/Intermissions_PWA/" />
+    <base href="/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/png" href="favicon.ico" />
     <link href="IntermissionsPwaApp.styles.css" rel="stylesheet" />
-    <link href="manifest.webmanifest" rel="manifest" />
+    <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
-</head>
+    
 
+</head>
 <body>
 <div id="app">
     <svg class="loading-progress">
@@ -25,37 +25,48 @@
 </div>
 
 <div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a href="" class="reload">Reload</a>
+    Er is een fout opgetreden.
+    <a href="" class="reload">Herlaad</a>
     <a class="dismiss">🗙</a>
 </div>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+            .then(registration => {
+                console.log(`✅ Service Worker geregistreerd`, registration.scope);
+            })
+            .catch(error => {
+                console.error(`❌ Fout bij registratie van Service Worker:`, error);
+            });
+    }
+</script>
 
 <script>
     let deferredPrompt;
 
-    window.setupInstallPrompt = () => {
-        window.addEventListener("beforeinstallprompt", (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-        });
-        return true;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        console.log("🟡 beforeinstallprompt fired");
+        e.preventDefault();
+        deferredPrompt = e;
+        window.dispatchEvent(new Event("installPromptAvailable"));
+    });
+
+
+    window.showInstallPrompt = async () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const result = await deferredPrompt.userChoice;
+            deferredPrompt = null;
+            return result.outcome === 'accepted';
+        }
+        return false;
     };
 
-    window.triggerInstall = async () => {
-        if (!deferredPrompt) return false;
-
-        const promptObj = deferredPrompt;
-        deferredPrompt = null;
-
-        const result = await promptObj.prompt();
-        if (!result || !result.userChoice) return false;
-
-        return result.userChoice.outcome === 'accepted';
+    window.installPromptIsAvailable = () => {
+        return !!deferredPrompt;
     };
 </script>
 
 <script src="_framework/blazor.webassembly.js"></script>
-<script>navigator.serviceWorker.register('service-worker.js');</script>
 </body>
-
 </html>

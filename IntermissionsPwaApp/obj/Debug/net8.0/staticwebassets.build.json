@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5QXxeJJ1tLSDTP5gQtSTEWlOp1Wd6WMJLMIRrGPnnDE=",
+  "Hash": "jDNuS2VgQgIl6qrY+PD7vDPWhFUiEiv4V8gPk+bvk9U=",
   "Source": "IntermissionsPwaApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -7883,12 +7883,12 @@
       "OriginalItemSpec": "wwwroot/css/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Identity": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/favicon.png",
+      "Identity": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/favicon.ico",
       "SourceId": "IntermissionsPwaApp",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/",
       "BasePath": "/",
-      "RelativePath": "favicon.png",
+      "RelativePath": "favicon.ico",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7899,15 +7899,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/favicon.png"
+      "OriginalItemSpec": "wwwroot/favicon.ico"
     },
     {
-      "Identity": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/icon-192.png",
+      "Identity": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/icon-new-192.png",
       "SourceId": "IntermissionsPwaApp",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/",
       "BasePath": "/",
-      "RelativePath": "icon-192.png",
+      "RelativePath": "icon-new-192.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7918,15 +7918,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/icon-192.png"
+      "OriginalItemSpec": "wwwroot/icon-new-192.png"
     },
     {
-      "Identity": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/icon-512.png",
+      "Identity": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/icon-new-512.png",
       "SourceId": "IntermissionsPwaApp",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/",
       "BasePath": "/",
-      "RelativePath": "icon-512.png",
+      "RelativePath": "icon-new-512.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7937,7 +7937,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/icon-512.png"
+      "OriginalItemSpec": "wwwroot/icon-new-512.png"
     },
     {
       "Identity": "/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/wwwroot/index.html",

@@ -12,9 +12,9 @@
 <div class="mb-3 d-flex flex-wrap gap-2">
     <button class="btn btn-success" @onclick="@(() => Nav.NavigateTo("showform"))">➕ Nieuwe show toevoegen</button>
     <button class="btn btn-outline-primary" @onclick="ExportCsv">📤 Exporteer CSV</button>
-    <label class="btn btn-outline-secondary">
-        📥 Importeer CSV
-        <input type="file" accept=".csv" hidden @onchange="HandleCsvImport" />
+    <label class="btn btn-outline-primary">
+        📂 Importeer CSV
+        <InputFile OnChange="HandleCsvImport" accept=".csv" style="display:none" />
     </label>
 </div>
 
@@ -90,16 +90,79 @@ else
         await ShowService.ExportToCsvAsync();
     }
 
-    private async Task HandleCsvImport(ChangeEventArgs e)
+    private async Task HandleCsvImport(InputFileChangeEventArgs e)
     {
-        var file = (e.Value as Microsoft.AspNetCore.Components.Forms.IBrowserFile);
-        if (file is null) return;
+        var file = e.File;
+        if (file == null) return;
 
         using var stream = file.OpenReadStream();
         using var reader = new StreamReader(stream);
-        var csvContent = await reader.ReadToEndAsync();
+        var content = await reader.ReadToEndAsync();
 
-        await ShowService.ImportFromCsvAsync(csvContent);
+        await ImportFromCsvAsync(content);
         await LoadAndSortShowsAsync();
     }
+
+
+    private async Task ImportFromCsvAsync(string csvContent)
+    {
+        var lines = csvContent.Split('\n', StringSplitOptions.RemoveEmptyEntries).Skip(1);
+        foreach (var line in lines)
+        {
+            if (string.IsNullOrWhiteSpace(line)) continue;
+
+            var parts = ParseCsvLine(line);
+            if (parts.Length >= 4)
+            {
+                var show = new Show
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Title = parts[0].Trim(),
+                    Intermission = parts[1].Trim(),
+                    End = parts[2].Trim(),
+                    KdmExpires = DateTime.TryParse(parts[3].Trim(), out var date) ? date : DateTime.Today
+                };
+
+                await ShowService.CreateAsync(show);
+            }
+        }
+    }
+    private string Escape(string? value) =>
+        string.IsNullOrWhiteSpace(value) ? "" : "\"" + value.Replace("\"", "\"\"") + "\"";
+
+    private string[] ParseCsvLine(string line)
+    {
+        // Simpele CSV parser voor gescheiden door , met quotes
+        var values = new List<string>();
+        bool inQuotes = false;
+        var value = new StringBuilder();
+
+        foreach (var c in line)
+        {
+            if (c == '"' && !inQuotes)
+            {
+                inQuotes = true;
+                continue;
+            }
+
+            if (c == '"' && inQuotes)
+            {
+                inQuotes = false;
+                continue;
+            }
+
+            if (c == ',' && !inQuotes)
+            {
+                values.Add(value.ToString());
+                value.Clear();
+                continue;
+            }
+
+            value.Append(c);
+        }
+
+        values.Add(value.ToString());
+        return values.ToArray();
+    }
+
 }

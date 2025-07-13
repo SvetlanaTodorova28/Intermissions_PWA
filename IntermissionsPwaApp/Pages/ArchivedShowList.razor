@@ -1,0 +1,168 @@
+﻿@page "/archivedshows"
+@using IntermissionsPwaApp.Entities
+@using IntermissionsPwaApp.Services
+@inject IArchivedShowService ArchivedService
+@inject NavigationManager Nav
+@inject IJSRuntime JS
+@using System.Text
+
+
+<h3 class="mb-3">📦 Gearchiveerde voorstellingen</h3>
+
+@if (!Shows.Any())
+{
+    <div class="alert alert-info">
+        Er zijn nog geen gearchiveerde voorstellingen.
+    </div>
+}
+else
+{
+    <ul class="list-group">
+        @foreach (var show in Shows)
+        {
+            var vervaltBinnen3Dagen = show.KdmExpires <= DateTime.Today.AddDays(3);
+
+            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <div>
+                    <strong>@show.Title</strong><br />
+                    Pauze: @show.Intermission – Eind: @show.End –
+                    KDM: @show.KdmExpires.ToString("dd/MM/yyyy")
+
+                    @if (vervaltBinnen3Dagen)
+                    {
+                        <span class="badge bg-danger ms-2">⏳ Vervalt bijna</span>
+                    }
+                </div>
+                <div>
+                    <button class="btn btn-info btn-sm me-2" @onclick="() => UnarchiveShow(show.Id)">↩️ Terugzetten</button>
+                    <button class="btn btn-danger btn-sm" @onclick="() => DeleteShow(show.Id)">🗑 Verwijder</button>
+                </div>
+            </li>
+        }
+    </ul>
+}
+
+<div class="mt-4 d-flex flex-wrap gap-2">
+    <button class="btn btn-secondary" @onclick="ExportArchivedToCsvAsync">⬇️ Exporteer CSV</button>
+
+    <label class="btn btn-outline-primary">
+        📂 Importeer CSV
+        <input type="file" hidden @onchange="HandleCsvImport" accept=".csv" />
+    </label>
+</div>
+
+@code {
+    private List<Show> Shows = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadArchivedAsync();
+    }
+
+    private async Task LoadArchivedAsync()
+    {
+        Shows = (await ArchivedService.GetAllAsync())
+            .OrderByDescending(s => s.KdmExpires)
+            .ToList();
+    }
+
+    private async Task DeleteShow(string id)
+    {
+        await ArchivedService.DeleteAsync(id);
+        await LoadArchivedAsync();
+    }
+
+    private async Task UnarchiveShow(string id)
+    {
+        await ArchivedService.UnarchiveShowAsync(id);
+        await LoadArchivedAsync();
+    }
+
+    private async Task ExportArchivedToCsvAsync()
+    {
+        var csv = new StringBuilder();
+        csv.AppendLine("Titel,Pauze,Einde,KDM-vervalt");
+
+        foreach (var show in Shows)
+        {
+            csv.AppendLine($"\"{Escape(show.Title)}\",\"{Escape(show.Intermission)}\",\"{Escape(show.End)}\",\"{show.KdmExpires:yyyy-MM-dd}\"");
+        }
+
+        await JS.InvokeVoidAsync("downloadHelper.downloadCsv", csv.ToString(), "archived_shows.csv");
+    }
+
+    private async Task HandleCsvImport(ChangeEventArgs e)
+    {
+        var fileInput = e.Value as Microsoft.AspNetCore.Components.Forms.IBrowserFile;
+        if (fileInput == null) return;
+
+        using var stream = fileInput.OpenReadStream();
+        using var reader = new StreamReader(stream);
+        var content = await reader.ReadToEndAsync();
+
+        await ImportFromCsvAsync(content);
+        await LoadArchivedAsync();
+    }
+
+    private async Task ImportFromCsvAsync(string csvContent)
+    {
+        var lines = csvContent.Split('\n', StringSplitOptions.RemoveEmptyEntries).Skip(1);
+        foreach (var line in lines)
+        {
+            if (string.IsNullOrWhiteSpace(line)) continue;
+
+            var parts = ParseCsvLine(line);
+            if (parts.Length >= 4)
+            {
+                var show = new Show
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Title = parts[0].Trim(),
+                    Intermission = parts[1].Trim(),
+                    End = parts[2].Trim(),
+                    KdmExpires = DateTime.TryParse(parts[3].Trim(), out var date) ? date : DateTime.Today
+                };
+
+                await ArchivedService.AddAsync(show);
+            }
+        }
+    }
+
+    private string Escape(string? value) =>
+        string.IsNullOrWhiteSpace(value) ? "" : "\"" + value.Replace("\"", "\"\"") + "\"";
+
+    private string[] ParseCsvLine(string line)
+    {
+        // Simpele CSV parser voor gescheiden door , met quotes
+        var values = new List<string>();
+        bool inQuotes = false;
+        var value = new StringBuilder();
+
+        foreach (var c in line)
+        {
+            if (c == '"' && !inQuotes)
+            {
+                inQuotes = true;
+                continue;
+            }
+
+            if (c == '"' && inQuotes)
+            {
+                inQuotes = false;
+                continue;
+            }
+
+            if (c == ',' && !inQuotes)
+            {
+                values.Add(value.ToString());
+                value.Clear();
+                continue;
+            }
+
+            value.Append(c);
+        }
+
+        values.Add(value.ToString());
+        return values.ToArray();
+    }
+}

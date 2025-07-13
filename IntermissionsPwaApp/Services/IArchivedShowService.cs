@@ -1,18 +1,14 @@
+// IArchivedShowService.cs
 using IntermissionsPwaApp.Entities;
 
 namespace IntermissionsPwaApp.Services;
 
-public interface IShowService
+public interface IArchivedShowService
 {
     Task<List<Show>> GetAllAsync();
-    Task<Show?> GetByIdAsync(string id);
-    Task CreateAsync(Show newShow);
-    Task UpdateAsync(Show updatedShow);
+    Task AddAsync(Show newShow);
     Task DeleteAsync(string id);
-    Task UpdateBadgeAsync();
-    Task ArchiveShowAsync(string id);
     Task UnarchiveShowAsync(string id);
     Task ExportToCsvAsync();
     Task ImportFromCsvAsync(string csvContent);
-
 }

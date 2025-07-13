@@ -12,6 +12,8 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddScoped<IShowService, ShowService>();
+builder.Services.AddScoped<IArchivedShowService, ArchivedShowService>();
+
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("nl-BE");
 CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("nl-BE");
 

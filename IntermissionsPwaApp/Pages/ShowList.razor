@@ -1,62 +1,105 @@
 ﻿@page "/shows"
 @using IntermissionsPwaApp.Services
 @using IntermissionsPwaApp.Entities
-
 @inject IShowService ShowService
 @inject NavigationManager Nav
+@inject IJSRuntime JS
+@using System.Text
+
 
 <h3 class="mb-3">🎬 Shows overzicht</h3>
 
-<button class="btn btn-success mb-4" @onclick="@(() => Nav.NavigateTo("showform"))">➕ Nieuwe show toevoegen</button>
+<div class="mb-3 d-flex flex-wrap gap-2">
+    <button class="btn btn-success" @onclick="@(() => Nav.NavigateTo("showform"))">➕ Nieuwe show toevoegen</button>
+    <button class="btn btn-outline-primary" @onclick="ExportCsv">📤 Exporteer CSV</button>
+    <label class="btn btn-outline-secondary">
+        📥 Importeer CSV
+        <input type="file" accept=".csv" hidden @onchange="HandleCsvImport" />
+    </label>
+</div>
 
-<ul class="list-group">
-    @foreach (var show in Shows)
-    {
-    var vervaltBinnen3Dagen = show.KdmExpires <= DateTime.Today.AddDays(3);
+@if (!Shows.Any())
+{
+    <div class="alert alert-info">Er zijn nog geen shows toegevoegd.</div>
+}
+else
+{
+    <ul class="list-group">
+        @foreach (var show in Shows)
+        {
+            var vervaltBinnen3Dagen = show.KdmExpires <= DateTime.Today.AddDays(3);
 
-    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-        <div>
-            <strong>@show.Title</strong><br />
-            Pauze: @show.Intermission – Eind: @show.End –
-            KDM: @show.KdmExpires.ToString("dd/MM/yyyy")
+            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <div>
+                    <strong>@show.Title</strong><br />
+                    Pauze: @show.Intermission – Eind: @show.End –
+                    KDM: @show.KdmExpires.ToString("dd/MM/yyyy")
 
-            @if (vervaltBinnen3Dagen)
-            {
-            <span class="badge bg-danger ms-2">⏳ Vervalt bijna</span>
-            }
-        </div>
-        <div>
-            <button class="btn btn-warning btn-sm me-2" @onclick="() => UpdateShow(show)">🔄 Bewerken</button>
-            <button class="btn btn-danger btn-sm" @onclick="() => DeleteShow(show.Id)">🗑 Verwijder</button>
-        </div>
-    </li>
-    }
-
-</ul>
-
+                    @if (vervaltBinnen3Dagen)
+                    {
+                        <span class="badge bg-danger ms-2">⏳ Vervalt bijna</span>
+                    }
+                </div>
+                <div>
+                    <button class="btn btn-warning btn-sm me-2" @onclick="() => UpdateShow(show)">🔄 Bewerken</button>
+                    <button class="btn btn-danger btn-sm me-2" @onclick="() => DeleteShow(show.Id)">🗑 Verwijder</button>
+                    <button class="btn btn-info btn-sm" @onclick="() => ArchiveShow(show.Id)">🗃 Archiveer</button>
+                </div>
+            </li>
+        }
+    </ul>
+}
 
 @code {
     private List<Show> Shows = new();
 
-    protected override async Task OnInitializedAsync(){
-        Shows = await ShowService.GetAllAsync();
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAndSortShowsAsync();
         await ShowService.UpdateBadgeAsync();
     }
 
-    private async Task LoadAndSortShowsAsync(){
+    private async Task LoadAndSortShowsAsync()
+    {
         Shows = (await ShowService.GetAllAsync())
             .OrderByDescending(s => s.KdmExpires)
             .ToList();
     }
 
-    private async Task DeleteShow(string id){
+    private async Task DeleteShow(string id)
+    {
         await ShowService.DeleteAsync(id);
         await LoadAndSortShowsAsync();
-        await ShowService.UpdateBadgeAsync(); 
+        await ShowService.UpdateBadgeAsync();
     }
 
+    private async Task ArchiveShow(string id)
+    {
+        await ShowService.ArchiveShowAsync(id);
+        await LoadAndSortShowsAsync();
+        await ShowService.UpdateBadgeAsync();
+    }
 
-    private async Task UpdateShow(Show show){
+    private void UpdateShow(Show show)
+    {
         Nav.NavigateTo($"showform/{show.Id}");
+    }
+
+    private async Task ExportCsv()
+    {
+        await ShowService.ExportToCsvAsync();
+    }
+
+    private async Task HandleCsvImport(ChangeEventArgs e)
+    {
+        var file = (e.Value as Microsoft.AspNetCore.Components.Forms.IBrowserFile);
+        if (file is null) return;
+
+        using var stream = file.OpenReadStream();
+        using var reader = new StreamReader(stream);
+        var csvContent = await reader.ReadToEndAsync();
+
+        await ShowService.ImportFromCsvAsync(csvContent);
+        await LoadAndSortShowsAsync();
     }
 }

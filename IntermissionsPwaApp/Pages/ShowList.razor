@@ -58,13 +58,13 @@ else
         await LoadAndSortShowsAsync();
         await ShowService.UpdateBadgeAsync();
     }
-
     private async Task LoadAndSortShowsAsync()
     {
         Shows = (await ShowService.GetAllAsync())
-            .OrderByDescending(s => s.KdmExpires)
+            .OrderBy(s => s.KdmExpires)
             .ToList();
     }
+
 
     private async Task DeleteShow(string id)
     {

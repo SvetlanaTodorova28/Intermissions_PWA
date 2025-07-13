@@ -5,6 +5,7 @@
 @inject NavigationManager Nav
 @inject IJSRuntime JS
 @using System.Text
+@using Microsoft.AspNetCore.Components.Forms
 
 
 <h3 class="mb-3">📦 Gearchiveerde voorstellingen</h3>
@@ -47,8 +48,9 @@ else
 
     <label class="btn btn-outline-primary">
         📂 Importeer CSV
-        <input type="file" hidden @onchange="HandleCsvImport" accept=".csv" />
+        <InputFile OnChange="HandleCsvImport" accept=".csv" style="display:none" />
     </label>
+
 </div>
 
 @code {
@@ -91,18 +93,19 @@ else
         await JS.InvokeVoidAsync("downloadHelper.downloadCsv", csv.ToString(), "archived_shows.csv");
     }
 
-    private async Task HandleCsvImport(ChangeEventArgs e)
+    private async Task HandleCsvImport(InputFileChangeEventArgs e)
     {
-        var fileInput = e.Value as Microsoft.AspNetCore.Components.Forms.IBrowserFile;
-        if (fileInput == null) return;
+        var file = e.File;
+        if (file == null) return;
 
-        using var stream = fileInput.OpenReadStream();
+        using var stream = file.OpenReadStream();
         using var reader = new StreamReader(stream);
         var content = await reader.ReadToEndAsync();
 
         await ImportFromCsvAsync(content);
         await LoadArchivedAsync();
     }
+
 
     private async Task ImportFromCsvAsync(string csvContent)
     {

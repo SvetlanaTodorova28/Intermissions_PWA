@@ -17,7 +17,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-+s97F8aFMprswW2xDf79F+yhm9QMDmQCDVGh3kx0anc=",
+      "hash": "sha256-9gl\/l+JiuMpS6p1nOlAQkOes9nvKkPmkAlhcVDkDao8=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -25,11 +25,11 @@
       "url": "_framework\/dotnet.native.8.0.15.c6l25vybfe.js"
     },
     {
-      "hash": "sha256-tEsuD0kf4U33r78lwCC6BiL\/X7ys7T9uertjsaEFQDs=",
+      "hash": "sha256-9eGEtkSRCqwCXv8gVd25SAhQ42jGNjWdqwXzeX12bl4=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
-      "hash": "sha256-kBfUGx4aEEpQ\/EjSscirdeUrUnvT\/UNauAG\/XN916hE=",
+      "hash": "sha256-p534zbIWBH0Fapg6JjjEn\/O7ehErMbB1uOGBz+CcgQ0=",
       "url": "_framework\/IntermissionsPwaApp.wasm"
     },
     {
@@ -41,11 +41,11 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.wasm"
     },
     {
-      "hash": "sha256-UJ\/Zd354Px17SusWipnzJMLQrHrM1+7OHJlPLM730UI=",
+      "hash": "sha256-lTalJPdpqgItNz7dK5TmrMzO2vXG1oj8I2sDmq4MPto=",
       "url": "_framework\/Microsoft.AspNetCore.Components.Web.wasm"
     },
     {
-      "hash": "sha256-1\/q8HCnkfx2cBfBoL7rb6O3Y7KIh1kZ4j9xG3A72XlU=",
+      "hash": "sha256-4jSDYGDGJeMmOlHHJ\/jyPEj0vuL7yb0kjP4zH8Fgmfg=",
       "url": "_framework\/Microsoft.AspNetCore.Components.WebAssembly.wasm"
     },
     {
@@ -85,7 +85,7 @@
       "url": "_framework\/Microsoft.Extensions.Primitives.wasm"
     },
     {
-      "hash": "sha256-+Rt8iKATTcS4lJwzOVupnY95QLDIoKdW228hSCzBifg=",
+      "hash": "sha256-q04zO8yNmDQSzHk0tRaxJWp4RjB\/H4s7rWcUFZbnwt4=",
       "url": "_framework\/Microsoft.JSInterop.wasm"
     },
     {
@@ -153,7 +153,7 @@
       "url": "_framework\/System.ObjectModel.wasm"
     },
     {
-      "hash": "sha256-Oq5+K9gQtjEYO6lbd0AQlfk7nonU9ysaTfwisHNoOaA=",
+      "hash": "sha256-YwV2KvGD8pKti1skn4MVfLBxHjqwfwDh0kGsiMUinqM=",
       "url": "_framework\/System.Private.CoreLib.wasm"
     },
     {
@@ -233,5 +233,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "Cwd8vjtx"
+  "version": "UPt\/\/nZT"
 };

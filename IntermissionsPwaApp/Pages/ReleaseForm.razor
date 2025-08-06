@@ -64,7 +64,8 @@
         {
             await ReleaseService.UpdateAsync(Release);
         }
-
-        Nav.NavigateTo("/futurereleases");
+        
+        var uri = new Uri(Nav.BaseUri);
+        Nav.NavigateTo($"{uri.AbsolutePath}futurereleases");
     }
 }

@@ -27,7 +27,7 @@ public class FutureReleaseService : IFutureReleaseService
 
     public async Task AddAsync(FutureRelease release)
     {
-        var releases = await GetFromStorageAsync();
+        var releases = await GetAllAsync();
         releases.Add(release);
         await SaveToStorageAsync(releases);
     }
@@ -63,14 +63,14 @@ public class FutureReleaseService : IFutureReleaseService
         var json = JsonSerializer.Serialize(releases);
         await _js.InvokeVoidAsync("localStorage.setItem", StorageKey, json);
     }
+  
     public async Task MoveToShowAsync(string id)
     {
         var futureReleases = await GetFromStorageAsync();
         var releaseToMove = futureReleases.FirstOrDefault(r => r.Id == id);
         if (releaseToMove == null) return;
-
-        futureReleases = futureReleases.Where(r => r.Id != id).ToList();
-        await SaveToStorageAsync(futureReleases); 
+        
+        await DeleteAsync(releaseToMove.Id); 
 
         var newShow = new Show
         {

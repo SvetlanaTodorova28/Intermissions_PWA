@@ -27,10 +27,19 @@ public class FutureReleaseService : IFutureReleaseService
 
     public async Task AddAsync(FutureRelease release)
     {
-        var releases = await GetAllAsync();
+        Console.WriteLine($"🔄 AddAsync gestart voor: {release.Title}");
+
+        var releases = await GetFromStorageAsync();
+        Console.WriteLine($"📦 Releases in storage voor toevoegen: {releases.Count}");
+
         releases.Add(release);
+
         await SaveToStorageAsync(releases);
+
+        var afterSave = await GetFromStorageAsync();
+        Console.WriteLine($"✅ Releases na toevoegen: {afterSave.Count}");
     }
+
 
     public async Task UpdateAsync(FutureRelease updatedRelease)
     {

@@ -19,12 +19,12 @@
 
     <div class="mb-3">
         <label class="form-label">🎞 Type</label>
-        @*<InputSelect @bind-Value="Release.Type" class="form-select">
+        <InputSelect @bind-Value="Release.Type" class="form-select">
             @foreach (ReleaseType type in Enum.GetValues(typeof(ReleaseType)))
             {
                 <option value="@type">@type</option>
             }
-        </InputSelect>*@
+        </InputSelect>
     </div>
 
     <div class="mb-3">

@@ -1,0 +1,70 @@
+﻿@page "/releasesform"
+@page "/releasesform/{Id}"
+
+@using IntermissionsPwaApp.Entities
+@using IntermissionsPwaApp.Services
+@inject IFutureReleaseService ReleaseService
+@inject NavigationManager Nav
+
+<h3 class="mb-4">@((string.IsNullOrEmpty(Id) ? "➕ Nieuwe release toevoegen" : "✏️ Release bewerken"))</h3>
+
+<EditForm Model="Release" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label class="form-label">🎬 Titel</label>
+        <InputText @bind-Value="Release.Title" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">🎞 Type</label>
+        <InputSelect @bind-Value="Release.Type" class="form-select">
+            @foreach (ReleaseType type in Enum.GetValues(typeof(ReleaseType)))
+            {
+                <option value="@type">@type</option>
+            }
+        </InputSelect>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">📅 Release datum</label>
+        <InputDate @bind-Value="Release.ReleaseDate" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">💾 Opslaan</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public string? Id { get; set; }
+
+    private FutureRelease Release = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!string.IsNullOrEmpty(Id))
+        {
+            var existing = await ReleaseService.GetByIdAsync(Id);
+            if (existing is not null)
+            {
+                Release = existing;
+            }
+        }
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        if (string.IsNullOrEmpty(Release.Id))
+        {
+            Release.Id = Guid.NewGuid().ToString();
+            await ReleaseService.AddAsync(Release);
+        }
+        else
+        {
+            await ReleaseService.UpdateAsync(Release);
+        }
+
+        Nav.NavigateTo("/futurereleases");
+    }
+}

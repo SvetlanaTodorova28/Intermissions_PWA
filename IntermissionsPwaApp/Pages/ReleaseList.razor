@@ -1,0 +1,69 @@
+﻿@page "/futurereleases"
+@using IntermissionsPwaApp.Entities
+@using IntermissionsPwaApp.Services
+@inject IFutureReleaseService FutureReleaseService
+@inject IShowService ShowService
+@inject NavigationManager Nav
+
+<h3 class="mb-3">🔮 Toekomstige Releases</h3>
+
+<div class="mb-3 d-flex flex-wrap gap-2">
+    <button class="btn btn-success" @onclick="@(() => Nav.NavigateTo("releasesform"))">➕ Nieuwe release toevoegen</button>
+</div>
+
+@if (!Releases.Any())
+{
+    <div class="alert alert-info">Er zijn nog geen toekomstige releases toegevoegd.</div>
+}
+else
+{
+    <ul class="list-group">
+        @foreach (var release in Releases)
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <div>
+                    <strong>@release.Title</strong><br />
+                    🎞 @release.Type – 📅 @release.ReleaseDate.ToString("dd/MM/yyyy")
+                </div>
+                <div>
+                    <button class="btn btn-warning btn-sm me-2" @onclick="() => UpdateRelease(release)">🔄 Bewerken</button>
+                    <button class="btn btn-danger btn-sm me-2" @onclick="() => DeleteRelease(release.Id)">🗑 Verwijder</button>
+                    <button class="btn btn-success btn-sm" @onclick="() => MoveToShow(release.Id)">🎬 Naar Shows</button>
+                </div>
+            </li>
+        }
+    </ul>
+}
+
+@code {
+    private List<FutureRelease> Releases = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadReleasesAsync();
+    }
+
+    private async Task LoadReleasesAsync()
+    {
+        Releases = (await FutureReleaseService.GetAllAsync())
+            .OrderBy(r => r.ReleaseDate)
+            .ToList();
+    }
+
+    private async Task DeleteRelease(string id)
+    {
+        await FutureReleaseService.DeleteAsync(id);
+        await LoadReleasesAsync();
+    }
+
+    private void UpdateRelease(FutureRelease release)
+    {
+        Nav.NavigateTo($"releasesform/{release.Id}");
+    }
+
+    private async Task MoveToShow(string id)
+    {
+        await FutureReleaseService.MoveToShowAsync(id);
+        await LoadReleasesAsync();
+    }
+}

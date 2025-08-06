@@ -11,4 +11,5 @@ public class Show
     public string End { get; set; } = string.Empty;
 
     public DateTime KdmExpires { get; set; } = DateTime.Today;
+    public DateTime ReleaseDate { get; set; } = DateTime.Today;
 }

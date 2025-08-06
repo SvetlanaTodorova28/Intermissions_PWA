@@ -41,12 +41,12 @@
       "url": "sample-data\/weather.json"
     },
     {
-      "hash": "sha256-NcP7Qt+LvnQvji3TCsZSpm+wYmmb1c5Hq7Cho\/\/VhWU=",
-      "url": "IntermissionsPwaApp.styles.css"
-    },
-    {
       "hash": "sha256-gvHfnndfEu1tRf0rFb5988rWq7ITIotOaE8+AMbKYbc=",
       "url": "_framework\/blazor.webassembly.js"
+    },
+    {
+      "hash": "sha256-NcP7Qt+LvnQvji3TCsZSpm+wYmmb1c5Hq7Cho\/\/VhWU=",
+      "url": "IntermissionsPwaApp.styles.css"
     },
     {
       "hash": "sha256-kcIOasiNC2iD+Tg022f6aTCKnjwzyE8MQTNpQDoIzyw=",

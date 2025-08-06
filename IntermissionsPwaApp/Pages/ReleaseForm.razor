@@ -19,12 +19,12 @@
 
     <div class="mb-3">
         <label class="form-label">🎞 Type</label>
-        <InputSelect @bind-Value="Release.Type" class="form-select">
+        @*<InputSelect @bind-Value="Release.Type" class="form-select">
             @foreach (ReleaseType type in Enum.GetValues(typeof(ReleaseType)))
             {
                 <option value="@type">@type</option>
             }
-        </InputSelect>
+        </InputSelect>*@
     </div>
 
     <div class="mb-3">
@@ -55,6 +55,8 @@
 
     private async Task HandleValidSubmit()
     {
+        Console.WriteLine("▶️ HandleValidSubmit gestart");
+
         if (string.IsNullOrEmpty(Release.Id))
         {
             Release.Id = Guid.NewGuid().ToString();
@@ -64,8 +66,10 @@
         {
             await ReleaseService.UpdateAsync(Release);
         }
-        
-        Nav.NavigateTo($"{Nav.BaseUri}futurereleases");
 
+        Console.WriteLine("✅ Release toegevoegd of geüpdatet");
+
+        Nav.NavigateTo("futurereleases");
     }
+
 }

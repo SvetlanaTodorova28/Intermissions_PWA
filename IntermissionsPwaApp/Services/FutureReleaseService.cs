@@ -86,14 +86,14 @@ public class FutureReleaseService : IFutureReleaseService
         };
 
         // Toevoegen aan actieve shows
-        var showJson = await _js.InvokeAsync<string>("localStorage.getItem", "shows");
+        var showJson = await _js.InvokeAsync<string>("localStorage.getItem", "futureReleases");
         var shows = string.IsNullOrWhiteSpace(showJson)
             ? new List<Show>()
             : JsonSerializer.Deserialize<List<Show>>(showJson) ?? new List<Show>();
 
         shows.Add(newShow);
         var updatedJson = JsonSerializer.Serialize(shows);
-        await _js.InvokeVoidAsync("localStorage.setItem", "shows", updatedJson);
+        await _js.InvokeVoidAsync("localStorage.setItem", "futureReleases", updatedJson);
     }
 
 }

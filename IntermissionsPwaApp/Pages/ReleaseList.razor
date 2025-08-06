@@ -40,8 +40,21 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        await LoadReleasesAsync();
+        Releases = await FutureReleaseService.GetAllAsync();
+
+        if (!Releases.Any())
+        {
+            await FutureReleaseService.AddAsync(new FutureRelease
+            {
+                Id = Guid.NewGuid().ToString(),
+                Title = "Test Release",
+                Type = ReleaseType.Comedy,
+                ReleaseDate = DateTime.Today.AddDays(10)
+            });
+            Releases = await FutureReleaseService.GetAllAsync();
+        }
     }
+
 
     private async Task LoadReleasesAsync()
     {

@@ -1,4 +1,3 @@
-// FutureReleaseService.cs
 using System.Text.Json;
 using IntermissionsPwaApp.Entities;
 using Microsoft.JSInterop;
@@ -70,30 +69,26 @@ public class FutureReleaseService : IFutureReleaseService
         var releaseToMove = futureReleases.FirstOrDefault(r => r.Id == id);
         if (releaseToMove == null) return;
 
-        // Verwijderen uit toekomstige releases
         futureReleases = futureReleases.Where(r => r.Id != id).ToList();
         await SaveToStorageAsync(futureReleases); 
 
-
-        // Omzetten naar een Show
         var newShow = new Show
         {
             Id = Guid.NewGuid().ToString(),
             Title = releaseToMove.Title,
-            Intermission = "", // Laat leeg of voorzie default
-            End = "",          // Laat leeg of voorzie default
+            Intermission = "",
+            End = "",
             KdmExpires = releaseToMove.ReleaseDate
         };
 
-        // Toevoegen aan actieve shows
-        var showJson = await _js.InvokeAsync<string>("localStorage.getItem", "futureReleases");
+        var showJson = await _js.InvokeAsync<string>("localStorage.getItem", "shows");
         var shows = string.IsNullOrWhiteSpace(showJson)
             ? new List<Show>()
             : JsonSerializer.Deserialize<List<Show>>(showJson) ?? new List<Show>();
 
         shows.Add(newShow);
         var updatedJson = JsonSerializer.Serialize(shows);
-        await _js.InvokeVoidAsync("localStorage.setItem", "futureReleases", updatedJson);
+        await _js.InvokeVoidAsync("localStorage.setItem", "shows", updatedJson); 
     }
 
 }

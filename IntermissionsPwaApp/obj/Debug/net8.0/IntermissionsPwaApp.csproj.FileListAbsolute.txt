@@ -6,6 +6,7 @@
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/dotnet.native.wasm
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/dotnet.runtime.8.0.15.loxflaxo6q.js
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/dotnet.runtime.js.map
+/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/icudt.dat
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/IntermissionsPwaApp.pdb
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/IntermissionsPwaApp.wasm
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/Microsoft.AspNetCore.Authorization.wasm
@@ -357,6 +358,7 @@
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/System.Collections.wasm.gz
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/System.ComponentModel.Primitives.wasm.gz
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/System.Configuration.wasm.gz
+/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/icudt.dat.gz
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/System.Diagnostics.Contracts.wasm.gz
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/System.ObjectModel.wasm.gz
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/System.Transactions.wasm.gz
@@ -602,6 +604,7 @@
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/dotnet.native.wasm
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/dotnet.runtime.js
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/dotnet.runtime.js.map
+/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/icudt.dat
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.csproj.AssemblyReference.cache
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.GeneratedMSBuildEditorConfig.editorconfig
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.AssemblyInfoInputs.cache
@@ -1012,6 +1015,7 @@
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/compressed/fx51ew8omp.gz
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/compressed/loxflaxo6q.gz
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/compressed/4zc04zqob9.gz
+/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/compressed/t30lwjbath.gz
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/compressed/ke7dr26tzr.gz
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/compressed/sktc3hod9a.gz
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/compressed/zut9de47ww.gz
@@ -1022,7 +1026,3 @@
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/refint/IntermissionsPwaApp.dll
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/IntermissionsPwaApp.pdb
 /Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/ref/IntermissionsPwaApp.dll
-/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/icudt.dat
-/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/wwwroot/_framework/icudt.dat.gz
-/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/bin/Debug/net8.0/icudt.dat
-/Users/svetlanatodorova/Library/Mobile Documents/com~apple~CloudDocs/Leerstof/Graduaat/Cinema/IntermissionsPwaApp/obj/Debug/net8.0/compressed/t30lwjbath.gz

@@ -41,12 +41,12 @@
       "url": "sample-data\/weather.json"
     },
     {
-      "hash": "sha256-gvHfnndfEu1tRf0rFb5988rWq7ITIotOaE8+AMbKYbc=",
-      "url": "_framework\/blazor.webassembly.js"
-    },
-    {
       "hash": "sha256-NcP7Qt+LvnQvji3TCsZSpm+wYmmb1c5Hq7Cho\/\/VhWU=",
       "url": "IntermissionsPwaApp.styles.css"
+    },
+    {
+      "hash": "sha256-gvHfnndfEu1tRf0rFb5988rWq7ITIotOaE8+AMbKYbc=",
+      "url": "_framework\/blazor.webassembly.js"
     },
     {
       "hash": "sha256-kcIOasiNC2iD+Tg022f6aTCKnjwzyE8MQTNpQDoIzyw=",
@@ -841,17 +841,17 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-7myk1\/oUUJ8vESXh\/ONNrhO9w7MvxcYt\/F09MOtOvT8=",
+      "hash": "sha256-1fORj46pOtR0XW2yaq9yVHW1lpyT6wR3DSzTJv5+nmg=",
       "url": "_framework\/IntermissionsPwaApp.wasm"
     },
     {
-      "hash": "sha256-TAHuDRDoqiTrf+sPNr8CBSz8Ts4tVDLk0iu3b0Yfy9w=",
+      "hash": "sha256-OVdjKtBA\/y\/u7v2F1rXTX\/hKjhPI4goWt\/8cWG6VE+s=",
       "url": "_framework\/IntermissionsPwaApp.pdb"
     },
     {
-      "hash": "sha256-hTAZG8M+\/YEyHYXKx1Ec\/MEkap+7ags160Sv9ZjHeaY=",
+      "hash": "sha256-nZ32rQFQCoGd7OwkN+yuxO4KH4GspsQJq7HvgoSBGDQ=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "Pgqc38XM"
+  "version": "35NB8rnn"
 };
